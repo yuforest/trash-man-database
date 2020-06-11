@@ -1,0 +1,83 @@
+<div class="section section-hero section-shaped">
+  <div class="shape shape-style-6 shape-primary">
+    <span class="span-150"></span>
+    <span class="span-50"></span>
+    <span class="span-50"></span>
+    <span class="span-75"></span>
+    <span class="span-100"></span>
+    <span class="span-75"></span>
+    <span class="span-50"></span>
+    <span class="span-100"></span>
+    <span class="span-50"></span>
+    <span class="span-100"></span>
+  </div>
+  <div class="page-header">
+    <div class="container shape-container d-flex align-items-center py-lg">
+      <div class="col px-0">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h1 class="text-white display-2">クズ男データベースとは？</h1>
+            <h2 class="display-4 font-weight-normal text-white">あなたの遭遇したクズ男の特徴を記録、シェアできるサイトです</h2>
+            <div class="btn-wrapper mt-4">
+              <%= link_to new_user_post_path, class: "btn btn-warning btn-icon mt-3 mb-sm-0" do %>
+                <span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
+                <span class="btn-inner--text">体験談を投稿してみる</span>
+              <% end %>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="separator separator-bottom separator-skew zindex-100">
+    <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <section class="my-4">
+    <h2 class="display-4">新着のクズ男体験談</h2>
+    <% @new_posts.each do |post| %>
+      <%= render "shared/components/post_list_item", post: post %>
+    <% end %>
+    <div class="text-center">
+      <%= link_to "もっと見る", posts_path, class:"btn btn-primary" %>
+    </div>
+  </section>
+  <section>
+    <h2 class="display-4">みんなが見ているクズ男体験談</h2>
+    <div class="my-4">
+      <h3 class="font-size-xl">
+        初デートでサイゼ、、、しかも割り勘
+      </h3>
+      <p class="font-size-md">
+        マッチングアプリであった人と初めてのデート。
+        しばらく会話を交わして連れて行かれたのはなんとサイゼリア。
+        美味しいからいいんだけどそういうことじゃない感が半端なかった。
+      </p>
+    </div>
+    <div class="my-4">
+      <h3>
+        初デートでサイゼ、、、しかも割り勘
+      </h3>
+      <p>
+        マッチングアプリであった人と初めてのデート。
+        しばらく会話を交わして連れて行かれたのはなんとサイゼリア。
+        美味しいからいいんだけどそういうことじゃない感が半端なかった。
+      </p>
+    </div>
+    <div class="my-4">
+      <h3>
+        初デートでサイゼ、、、しかも割り勘
+      </h3>
+      <p>
+        マッチングアプリであった人と初めてのデート。
+        しばらく会話を交わして連れて行かれたのはなんとサイゼリア。
+        美味しいからいいんだけどそういうことじゃない感が半端なかった。
+      </p>
+    </div>
+  </section>
+</div>

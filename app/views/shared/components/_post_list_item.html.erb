@@ -1,0 +1,24 @@
+ <div class="my-4 row border-bottom border-primary">
+  <div class="col-3 col-md-2 d-flex flex-column align-items-center">
+    <img src="/argon/assets/img/faces/team-4.jpg" class="rounded-circle w-100 w-md-75">
+    <p class="mt-1">サイゼさん</p>
+  </div>
+  <div class="col-9 col-md-10">
+    <h3 class="font-size-xl">
+      <%= link_to post_path(post) do %>
+        <%= post.title %>
+      <% end %>
+      <span id="favorite_btn_<%= post.id %>">
+        <%= render "shared/components/favorite_button", post: post %>
+      </span>
+    </h3>
+    <p class="font-size-md">
+      <%= post.content %>
+    </p>
+    <div class="mt-3 pt-1">
+      <div>
+        <i class="fas fa-eye mr-1"></i><%= number_with_delimiter(post.impressionist_count) %>
+      </div>
+    </div>
+  </div>
+</div>

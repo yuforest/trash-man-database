@@ -1,0 +1,18 @@
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer {
+  margin-top: auto;
+}
+
+
+@for $i from 1 through 50 {
+  $base: 10;
+  $width: $base * $i;
+  .w-#{$width}px {
+    width: #{$width}px;
+  }
+}

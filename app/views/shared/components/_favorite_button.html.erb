@@ -1,0 +1,15 @@
+<% if user_signed_in? #&& post.user != current_user %>
+  <% favorite = current_user.favorites.find_by(post_id: post.id) %>
+  <% if favorite.present? %>
+    <%= link_to user_post_favorite_path(post_id: post.id, id: favorite.id), method: :delete, remote: true, class: "text-danger" do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
+  <% else %>
+    <%= link_to user_post_favorites_path(post_id: post.id), method: :post, remote: true, class: "text-danger" do %>
+      <i class="far fa-heart"></i>
+    <% end %>
+  <% end %>
+  <span>
+    <%= post.favorited_users.count %>
+  </span>
+<% end %>

@@ -1,0 +1,39 @@
+<div class="container">
+  <section class="my-4">
+    <div class="d-flex justify-content-between mx-2 mb-2">
+      <h2 class="display-4">自分の投稿一覧</h2>
+      <%= link_to "新規投稿", new_user_post_path, class: 'btn btn-primary' %>
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-nowrap">タイトル</th>
+            <th class="text-nowrap">カテゴリ</th>
+            <th class="text-nowrap">タグ</th>
+            <th class="text-nowrap">いいね数</th>
+            <th class="text-nowrap">コメント数</th>
+            <th class="text-nowrap">投稿日時</th>
+            <th class="text-nowrap"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <td class="text-center"><%= post.title %></td>
+              <td>恋愛</td>
+              <td>バンドマン、ホスト</td>
+              <td>100</td>
+              <td>5</td>
+              <td>2020/5/20</td>
+              <td class="td-actions text-nowrap">
+                <%= link_to "編集", edit_user_post_path(post) , class:"btn btn-success btn-icon btn-sm" %>
+                <%= link_to "削除", user_post_path(post) , class:"btn btn-danger btn-icon btn-sm", method: :delete, data: {confirm: "削除しますか？"} %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
