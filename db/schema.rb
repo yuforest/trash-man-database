@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_082654) do
     t.integer "approval", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "category", null: false
+    t.integer "category", default: 0, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_082654) do
   create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "image", default: "", null: false
+    t.text "biography"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end

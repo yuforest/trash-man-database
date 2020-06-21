@@ -3,6 +3,7 @@ class CreateUserProfiles < ActiveRecord::Migration[6.0]
     create_table :user_profiles do |t|
       t.string :name, default: "", null: false
       t.string :image, default: "", null: false
+      t.text :biography
       t.references :user, null: false, foreign_key: true
     end
   end

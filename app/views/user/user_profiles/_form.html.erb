@@ -1,0 +1,21 @@
+<%= form_with model: @user_profile, url: user_user_profile_path, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :biography %>
+    <%= f.text_area :biography, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <p>プロフィール画像には正方形の画像がおすすめです。</p>
+    <div>
+      <%= image_tag(@user_profile.image.thumb.url, class: "rounded-circle") if @user_profile.image.present? %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.submit '送信', class: 'btn btn-primary' %>
+  </div>
+<% end %>

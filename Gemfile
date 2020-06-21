@@ -23,6 +23,9 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'rails-i18n'
 gem 'impressionist'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'kaminari'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

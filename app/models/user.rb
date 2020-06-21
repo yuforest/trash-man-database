@@ -8,4 +8,11 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites
   has_many :post_comment, dependent: :destroy
+  has_one :user_profile, dependent: :destroy
+  after_create :init_profile
+  alias profile user_profile
+
+  def init_profile
+    self.build_user_profile.save(validate: false)
+  end
 end

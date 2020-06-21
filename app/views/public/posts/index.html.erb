@@ -4,5 +4,6 @@
     <% @posts.each do |post| %>
       <%= render "shared/components/post_list_item", post: post %>
     <% end %>
+    <%= paginate @posts %>
   </section>
 </div>

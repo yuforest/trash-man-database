@@ -1,8 +1,8 @@
- <div class="my-4 row border-bottom border-primary">
-  <div class="col-3 col-md-2 d-flex flex-column align-items-center">
-    <img src="/argon/assets/img/faces/team-4.jpg" class="rounded-circle w-100 w-md-75">
-    <p class="mt-1">サイゼさん</p>
-  </div>
+<div class="my-4 row border-bottom border-primary">
+  <%= link_to user_path(post.user), class: "col-3 col-md-2 d-flex flex-column align-items-center d-block" do %>
+    <%= image_tag(post.user.profile.image.thumb.url, class: "rounded-circle w-100 w-md-75") if post.user.profile.image.present? %>
+    <p class="mt-1"><%= post.user.profile.name %></p>
+  <% end %>
   <div class="col-9 col-md-10">
     <h3 class="font-size-xl">
       <%= link_to post_path(post) do %>

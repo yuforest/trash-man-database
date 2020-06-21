@@ -23,10 +23,11 @@ Rails.application.routes.draw do
   scope module: :public do
     get '/about'  => 'public#about'
     resources :posts, only: [:index, :show]
+    resources :users, only: :show
   end
   authenticate :user do
     namespace :user do
-      resource :user_profile, path: :profile, only: [:create, :edit, :update]
+      resource :user_profile, path: :profile, only: [:edit, :update]
       resources :posts, except: :show do
         resources :favorites, only: [:create, :destroy]
         resources :post_comments, only: [:create, :destroy]
