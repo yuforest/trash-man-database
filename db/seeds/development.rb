@@ -7,12 +7,9 @@ ActiveRecord::Base.transaction do
   end
 
   [
-    { email: "test@entershare.jp", password: "password", password_confirmation: "password" },
-    { email: "test1@entershare.jp", password: "password", password_confirmation: "password" },
-    { email: "test2@entershare.jp", password: "password", password_confirmation: "password" },
-    { email: "test3@entershare.jp", password: "password", password_confirmation: "password" },
-    { email: "test4@entershare.jp", password: "password", password_confirmation: "password" },
-    { email: "test5@entershare.jp", password: "password", password_confirmation: "password" },
+    { email: "test@gmail.jp", password: "password", password_confirmation: "password" },
+    { email: "test1@gmail.jp", password: "password", password_confirmation: "password" },
+    { email: "test2@gmail.jp", password: "password", password_confirmation: "password" },
   ].each do |u|
     user = User.new(u)
     user.skip_confirmation!
@@ -27,5 +24,25 @@ ActiveRecord::Base.transaction do
     しばらく会話を交わして連れて行かれたのはなんとサイゼリア。
     美味しいからいいんだけどそういうことじゃない感が半端なかった。"
     post.save!
+  end
+
+  [
+    { name: "ホスト" },
+    { name: "バンドマン" },
+    { name: "美容師" },
+    { name: "資産家" },
+    { name: "ヤンキー" },
+    { name: "パチンコ" },
+    { name: "競馬" },
+    { name: "社長" },
+    { name: "無職" },
+    { name: "ヒモ" },
+    { name: "ニート" },
+    { name: "タバコ" },
+    { name: "酒" },
+    { name: "風俗" },
+  ].each do |item|
+    tag = Tag.new(item)
+    tag.save!
   end
 end

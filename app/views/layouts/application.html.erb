@@ -24,16 +24,6 @@
       <%= render "shared/public/header" %>
       <%= yield %>
       <%= render "shared/public/footer" %>
-      <!-- Core -->
-      <script src="/argon/assets/js/core/jquery.min.js"></script>
-      <script src="/argon/assets/js/core/popper.min.js"></script>
-      <script src="/argon/assets/js/core/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
-
-      <!-- Argon JS -->
-      <script src="/argon/assets/js/argon-design-system.js"></script>
       <%= yield :scripts %>
     </div>
   </body>

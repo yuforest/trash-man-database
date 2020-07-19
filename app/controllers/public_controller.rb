@@ -5,4 +5,10 @@ class PublicController < ApplicationController
 
   def about
   end
+
+  def privary_policy
+  end
+
+  def terms
+  end
 end

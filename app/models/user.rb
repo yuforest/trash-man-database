@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_one :user_profile, dependent: :destroy
   after_create :init_profile
   alias profile user_profile
+  acts_as_paranoid
 
   def init_profile
     self.build_user_profile.save(validate: false)

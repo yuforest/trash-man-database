@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   end
   scope module: :public do
     get '/about'  => 'public#about'
+    get '/privary_policy'  => 'public#privary_policy'
+    get '/terms'  => 'public#terms'
+    resources :contacts, only: [:new]
     resources :posts, only: [:index, :show]
     resources :users, only: :show
   end
