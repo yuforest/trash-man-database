@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 2020_07_19_052457) do
 
   create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", default: "", null: false
-    t.string "image", default: "", null: false
+    t.string "image"
     t.text "biography"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_user_profiles_on_user_id"

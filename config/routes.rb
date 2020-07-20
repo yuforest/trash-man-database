@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  root 'public#index'
-  devise_for :admins, controllers: {
-    sessions:      'admins/sessions',
-    registrations: 'admins/registrations'
-  }
+  # devise_for :, controllers: {
+  #   sessions:      'admins/sessions'
+  # }
+  devise_for :admins, skip: :all
+  devise_scope :admin do
+    get 'admins/sign_in'    => 'admins/sessions#new', as: :new_admin_session
+    post 'admins/sign_in'    => 'admins/sessions#create', as: :admin_session
+    delete 'admins/sign_out' => 'asmins/sessions#destroy',  as: :destroy_admin_session
+  end
   devise_for :users, controllers: {
     sessions:           'users/sessions',
     registrations:      'users/registrations',
@@ -18,12 +22,14 @@ Rails.application.routes.draw do
       resources :posts, only: [:index, :show] do
         resources :approvals, only: [:update]
       end
+      resources :users, only: [:index, :show]
     end
   end
+  root 'public#index'
+  get '/about'  => 'public#about'
+  get '/privary_policy'  => 'public#privary_policy'
+  get '/terms'  => 'public#terms'
   scope module: :public do
-    get '/about'  => 'public#about'
-    get '/privary_policy'  => 'public#privary_policy'
-    get '/terms'  => 'public#terms'
     resources :contacts, only: [:new]
     resources :posts, only: [:index, :show]
     resources :users, only: :show

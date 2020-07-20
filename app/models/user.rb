@@ -16,4 +16,14 @@ class User < ApplicationRecord
   def init_profile
     self.build_user_profile.save(validate: false)
   end
+
+  def user_name
+    return profile.name if profile.name.present?
+    "匿名"
+  end
+
+  def user_image(size: :thumb)
+    return profile.image.send(size).url if profile.image.present?
+    return "default.png"
+  end
 end

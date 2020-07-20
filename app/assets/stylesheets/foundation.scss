@@ -8,6 +8,25 @@ footer {
   margin-top: auto;
 }
 
+$font-size-sm: 12;
+$font-size-md: 16;
+$font-size-lg: 20;
+$font-size-xl: 24;
+
+.font-size-sm {
+  font-size: #{$font-size-sm}px;
+}
+.font-size-md {
+  font-size: #{$font-size-md}px;
+}
+.font-size-lg {
+  font-size: #{$font-size-lg}px;
+}
+.font-size-xl {
+  font-size: #{$font-size-xl}px;
+}
+
+
 
 @for $i from 1 through 50 {
   $base: 10;

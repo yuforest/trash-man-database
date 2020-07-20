@@ -1,37 +1,42 @@
-<div class="section section-hero section-shaped">
-  <div class="shape shape-style-6 shape-primary">
-    <span class="span-150"></span>
-    <span class="span-50"></span>
-    <span class="span-50"></span>
-    <span class="span-75"></span>
-    <span class="span-100"></span>
-    <span class="span-75"></span>
-    <span class="span-50"></span>
-    <span class="span-100"></span>
-    <span class="span-50"></span>
-    <span class="span-100"></span>
-  </div>
-  <div class="page-header">
-    <div class="container shape-container d-flex align-items-center py-lg">
-      <div class="col px-0">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h1 class="text-white display-1">クズ男データベースとは？</h1>
-            <h2 class="display-4 font-weight-normal text-white">あなたの遭遇したクズ男の特徴を記録、シェアできるサイトです</h2>
-            <div class="btn-wrapper mt-4">
-              <a href="#" class="btn btn-warning btn-icon mt-3 mb-sm-0">
-                <span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
-                <span class="btn-inner--text">Play more</span>
-              </a>
-            </div>
+<%= render "shared/public/hero_section" %>
+<div class="section features-6">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="info info-horizontal info-hover-primary">
+          <div class="description pl-4">
+            <h5 class="title">あなたが出会ったクズ男の特徴を書き込む</h5>
+            <p>
+              あなたが出会ったクズ男の特徴を書き込むことで、将来お金や時間を無駄にしたと思う人が減るかもしれません。<br>
+              自分の思考を整理するために書き込むのも良いでしょう。
+            </p>
+            <%= link_to "クズ男の特徴を投稿する", new_user_post_path, class: 'text-info' %>
+          </div>
+        </div>
+        <div class="info info-horizontal info-hover-primary mt-5">
+          <div class="description pl-4">
+            <h5 class="title">他の人が出会ったクズ男の特徴を見る</h5>
+            <p>
+              あなたがまだ見ぬクズ男に他の人は既に出会っているかもしれません。
+              先人の叡智を学ぶことで人生の無駄な時間を省くことができるでしょう。
+            </p>
+            <%= link_to "他の人の投稿を見る", posts_path, class: 'text-info' %>
+          </div>
+        </div>
+        <div class="info info-horizontal info-hover-primary mt-5">
+          <div class="description pl-4">
+            <h5 class="title">他の人の投稿にいいねやコメントを残す</h5>
+            <p>
+              あなたが出会ったクズ男に他の人も出会っているかも？<br>
+              他の人の投稿に共感したり、物申したくなった時はいいねしたり、コメントを残すことができます。
+            </p>
+            <%= link_to "他の人の投稿一覧を見る", posts_path, class: 'text-info' %>
           </div>
         </div>
       </div>
+      <div class="col-lg-6 col-10 mx-md-auto">
+        <img class="ml-lg-5" src="/argon/assets/img/ill/ill.png" width="100%">
+      </div>
     </div>
-  </div>
-  <div class="separator separator-bottom separator-skew zindex-100">
-    <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-    </svg>
   </div>
 </div>

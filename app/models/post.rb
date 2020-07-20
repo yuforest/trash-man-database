@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   has_rich_text :content
   enum approval: { "published": 0, "prohibit": 1 }
   acts_as_paranoid
@@ -8,6 +9,6 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   is_impressionable
   has_many :tags, through: :post_tags
-  belongs_to :category
+  belongs_to_active_hash :category
   alias :comments :post_comments
 end
