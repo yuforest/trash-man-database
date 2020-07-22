@@ -8,7 +8,13 @@ class Post < ApplicationRecord
   has_many :favorited_users, through: :favorites, source: 'user'
   has_many :post_comments, dependent: :destroy
   is_impressionable
+  has_many :post_tags
   has_many :tags, through: :post_tags
   belongs_to_active_hash :category
   alias :comments :post_comments
+
+  scope :search_by_user_id, -> (user_id) {
+    return if user_id.nil?
+    where(user_id: user_id)
+  }
 end

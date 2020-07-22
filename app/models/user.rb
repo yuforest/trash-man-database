@@ -26,4 +26,17 @@ class User < ApplicationRecord
     return profile.image.send(size).url if profile.image.present?
     return "default.png"
   end
+
+  def total_favorites_count
+    posts.inject (0) { |sum, post| sum += post.favorites.count}
+  end
+
+  def total_comments_count
+    # count = 0
+    # posts.map { |post|
+    #   count += post.comments.count
+    # }
+    # count
+    posts.inject (0) { |sum, post| sum += post.comments.count}
+  end
 end

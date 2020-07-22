@@ -3,9 +3,6 @@
     <h2 class="display-4">
       <%= @profile.name %>さんのプロフィール
     </h2>
-    <div class="d-flex align-items-center">
-      <%= image_tag(@profile.image.thumb.url, class: "rounded-circle w-70px") if @profile.image.present? %>
-    </div>
     <div class="mt-3">
       <%= @profile.biography %>
     </div>

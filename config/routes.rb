@@ -17,12 +17,11 @@ Rails.application.routes.draw do
   }
   authenticate :admin do
     namespace :admin do
-      resources :categories
-      resources :tags
-      resources :posts, only: [:index, :show] do
-        resources :approvals, only: [:update]
+      resources :tags, except: [:show]
+      resources :posts, only: [:index] do
+        resource :approval, only: [:update]
       end
-      resources :users, only: [:index, :show]
+      resources :users, only: [:index, :destroy]
     end
   end
   root 'public#index'
