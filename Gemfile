@@ -28,6 +28,7 @@ gem 'mini_magick'
 gem 'kaminari'
 gem 'paranoia'
 gem 'active_hash'
+gem 'meta-tags'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

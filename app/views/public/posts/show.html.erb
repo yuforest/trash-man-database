@@ -1,3 +1,11 @@
+<% set_meta_tags title: @post.title,
+                 description: @post.content.to_plain_text,
+                 og: {
+                   title: @post.title,
+                   image: ogp_images_url(text: @post.content.to_plain_text.gsub(/[ ]/,""))
+                 }
+%>
+
 <div class="container mt-4">
   <section class="my-4">
     <h2 class="display-4">
@@ -10,11 +18,12 @@
     <div class="mt-3">
       <%= @post.content %>
     </div>
-    <div class="mt-3 pt-2 border-top border-primary">
+    <div class="mt-3 pt-2 border-top border-primary d-flex justify-content-between">
       <div>
         <i class="fas fa-eye mr-1"></i>
         <%= number_with_delimiter(@page_views) %>
       </div>
+      <%= render "shared/public/sns_buttons", url: request.url, title: @post.title %>
     </div>
     <div class="mt-3">
       <h4>みんなのコメント</h4>

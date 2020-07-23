@@ -24,7 +24,7 @@ class User < ApplicationRecord
 
   def user_image(size: :thumb)
     return profile.image.send(size).url if profile.image.present?
-    return "default.png"
+    return "default_user.png"
   end
 
   def total_favorites_count

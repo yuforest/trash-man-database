@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/about'  => 'public#about'
   get '/privary_policy'  => 'public#privary_policy'
   get '/terms'  => 'public#terms'
+  resource :ogp_images, only: [:show]
   scope module: :public do
     resources :contacts, only: [:new]
     resources :posts, only: [:index, :show]
