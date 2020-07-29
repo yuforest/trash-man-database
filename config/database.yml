@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: trash_man_database_production
-  username: trash_man_database
+  username: root
   password: <%= ENV['TRASH_MAN_DATABASE_DATABASE_PASSWORD'] %>
