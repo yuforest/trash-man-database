@@ -18,4 +18,16 @@ class Post < ApplicationRecord
     return if user_id.nil?
     where(user_id: user_id)
   }
+
+  scope :search_by_category, -> (category_id) {
+    return if category_id.nil?
+    where(category_id: category_id)
+  }
+
+  scope :search_by_tag, -> (tag_id) {
+    return if tag_id.nil?
+    joins(:tags).where("tags.id = ?", tag_id)
+  }
+
+
 end

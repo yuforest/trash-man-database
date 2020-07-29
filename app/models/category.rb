@@ -17,5 +17,7 @@ class Category < ActiveHash::Base
     { id: 13, name: "ヒモ"},
     { id: 14, name: "モラハラ"},
     { id: 15, name: "不潔"},
+    { id: 16, name: "最低な行為"},
+    { id: 17, name: "迷惑"},
   ]
 end

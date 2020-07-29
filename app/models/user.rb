@@ -32,11 +32,6 @@ class User < ApplicationRecord
   end
 
   def total_comments_count
-    # count = 0
-    # posts.map { |post|
-    #   count += post.comments.count
-    # }
-    # count
     posts.inject (0) { |sum, post| sum += post.comments.count}
   end
 end
