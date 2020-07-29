@@ -33,7 +33,10 @@ class User::PostsController < User::ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :category)
+    params.require(:post)
+          .permit(
+            :title, :content, :category_id, post_tags_attributes: [:tag_id]
+          )
   end
 
   def set_post

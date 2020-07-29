@@ -29,6 +29,9 @@ gem 'kaminari'
 gem 'paranoia'
 gem 'active_hash'
 gem 'meta-tags'
+gem 'fog'
+gem 'cocoon'
+gem 'dotenv'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

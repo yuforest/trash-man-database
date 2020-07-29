@@ -12,4 +12,7 @@ class PublicController < ApplicationController
 
   def terms
   end
+
+  def operator
+  end
 end

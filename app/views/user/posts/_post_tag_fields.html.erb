@@ -1,0 +1,8 @@
+<div class="nested-fields d-flex my-2">
+  <div class="mr-2">
+    <%= f.collection_select :tag_id, Tag.all, :id, :name, {}, class: 'form-control' %>
+  </div>
+  <div>
+    <%= link_to_remove_association '削除', f, class: 'btn btn-default' %>
+  </div>
+</div>
