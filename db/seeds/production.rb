@@ -7,13 +7,32 @@ ActiveRecord::Base.transaction do
   end
 
   [
-    { email: "test@gmail.com", password: "password", password_confirmation: "password" },
-    { email: "test1@gmail.com", password: "password", password_confirmation: "password" },
-    { email: "test2@gmail.com", password: "password", password_confirmation: "password" },
+    {
+      email: "test@gmail.com",
+      password: "vKLERP8io8XQZBHf",
+      password_confirmation: "vKLERP8io8XQZBHf",
+      profile: {name: "K", image: Rails.root.to_s + "/public/seeds/imgs/users/user1.jpg"}
+    },
+    {
+      email: "test1@gmail.com",
+      password: "XhV5tC4BToiIgMvo",
+      password_confirmation: "XhV5tC4BToiIgMvo",
+      profile: {name: "ami", image: Rails.root.to_s + "/public/seeds/imgs/users/user2.jpg"}
+    },
+    {
+      email: "test2@gmail.com",
+      password: "kEbRwous9jEaADeD",
+      password_confirmation: "kEbRwous9jEaADeD",
+      profile: {name: "くまさん", image: Rails.root.to_s + "/public/seeds/imgs/users/user3.jpg"}
+    },
   ].each do |u|
-    user = User.new(u)
+    user = User.new(u.except(:profile))
     user.skip_confirmation!
-    user.save
+    user.save!
+    profile = user.user_profile
+    profile.name = u[:profile][:name]
+    profile.image = File.open(u[:profile][:image])
+    profile.save!
   end
 
   [
