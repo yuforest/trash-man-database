@@ -3,6 +3,9 @@
                  og: {
                    title: @post.title,
                    image: ogp_images_url(text: @post.content.to_plain_text.gsub(/[ ]/,""))
+                 },
+                 twitter: {
+                   card: "summary_large_image",
                  }
 %>
 
