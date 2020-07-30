@@ -1,7 +1,7 @@
 <div class="py-4 row border-bottom border-primary">
   <%= link_to user_path(post.user), class: "col-3 col-md-2 d-flex flex-column align-items-center d-block" do %>
     <div class="thumb-img-wrapper">
-      <%= image_tag(post.user.user_image(size: :thumb), class: " w-100 w-md-75") %>
+      <%= image_tag(post.user.user_image(size: :thumb), class: "w-100 w-md-75") %>
     </div>
     <p class="mt-1"><%= post.user.user_name %></p>
   <% end %>
@@ -19,8 +19,8 @@
         <%= post.category.name %>
       <% end %>
     </div>
-    <div class="d-flex align-items-center">
-      <h3 class="font-size-xl m-0">
+    <div class="d-flex align-items-center justify-content-between">
+      <h3 class="w-75 font-size-xl m-0">
         <%= link_to post_path(post) do %>
           <%= post.title %>
         <% end %>

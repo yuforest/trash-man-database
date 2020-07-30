@@ -28,7 +28,9 @@
       <% end %>
     </div>
     <div class="d-flex align-items-center">
-      <%= image_tag(@post.user.user_image(size: :thumb), class: "rounded-circle w-70px") %>
+      <div class="thumb-img-wrapper">
+        <%= image_tag(@post.user.user_image(size: :thumb), class: "w-100 w-md-75") %>
+      </div>
       <p class="ml-2 mb-0"><%= @post.user.user_name %></p>
     </div>
     <div class="mt-3">
