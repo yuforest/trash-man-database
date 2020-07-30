@@ -31,7 +31,7 @@ gem 'active_hash'
 gem 'meta-tags'
 gem 'fog'
 gem 'cocoon'
-gem 'dotenv'
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
