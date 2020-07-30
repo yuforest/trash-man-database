@@ -7,7 +7,7 @@ class PublicController < ApplicationController
   def about
   end
 
-  def privary_policy
+  def privacy_policy
   end
 
   def terms

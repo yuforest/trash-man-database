@@ -9,7 +9,7 @@
             </button>
           </li>
           <li class="nav-item">
-            <%= link_to "プライバシーポリシー", privary_policy_path, class: 'nav-link'%>
+            <%= link_to "プライバシーポリシー", privacy_policy_path, class: 'nav-link'%>
           </li>
           <li class="nav-item">
             <%= link_to "利用規約", terms_path, class: 'nav-link'%>
@@ -23,7 +23,7 @@
     <div class="row mt-3">
       <div class="col-md-12">
         <div class="copyright text-center">
-          &copy; 2020 <a href="" target="_blank">クズ男データベース</a>
+          &copy; <%= Date.today.year %> <a href="" target="_blank">クズ男データベース</a>
         </div>
       </div>
     </div>

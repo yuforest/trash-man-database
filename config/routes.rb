@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   end
   root 'public#index'
   get '/about'  => 'public#about'
-  get '/privary_policy'  => 'public#privary_policy'
+  get '/privacy_policy'  => 'public#privacy_policy'
   get '/terms'  => 'public#terms'
   get '/operator'  => 'public#operator'
   resource :ogp_images, only: [:show]

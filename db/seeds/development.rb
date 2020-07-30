@@ -1,6 +1,6 @@
 ActiveRecord::Base.transaction do
   [
-    { email: "test@gmail.com", password: "password", password_confirmation: "password" },
+    { email: "test@gmail.com", password: "xWyLsfRJTnnWcmym", password_confirmation: "xWyLsfRJTnnWcmym" },
   ].each do |item|
     admin = Admin.new(item)
     admin.save!
