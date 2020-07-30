@@ -31,7 +31,6 @@ Rails.application.routes.draw do
   get '/operator'  => 'public#operator'
   resource :ogp_images, only: [:show]
   scope module: :public do
-    resources :contacts, only: [:new]
     resources :posts, only: [:index, :show]
     resources :users, only: :show
   end
