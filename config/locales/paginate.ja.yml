@@ -5,3 +5,4 @@ ja:
       last: "&raquo;"
       previous: "&lsaquo;"
       next: "&rsaquo;"
+      truncate: "..."
