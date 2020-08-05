@@ -2,6 +2,7 @@ class Public::PostsController < ApplicationController
   def index
     @posts = Post.search_by_category(params[:category])
                  .search_by_tag(params[:tag])
+                 .search_by_word(params[:search])
                  .page(params[:page]).per(5)
   end
 

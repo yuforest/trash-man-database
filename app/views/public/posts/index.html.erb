@@ -1,6 +1,11 @@
 <div class="container mt-4">
   <section class="my-4">
-    <h2 class="display-4">クズ男の体験談一覧</h2>
+    <h2 class="display-4">
+      クズ男の体験談一覧
+      <% if params[:search].present? %>
+        (<%= params[:search] %>の検索結果)
+      <% end %>
+    </h2>
     <% @posts.each do |post| %>
       <%= render "shared/components/post_list_item", post: post %>
     <% end %>

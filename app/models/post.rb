@@ -24,6 +24,11 @@ class Post < ApplicationRecord
     where(category_id: category_id)
   }
 
+  scope :search_by_word, -> (search_word) {
+    return if search_word.nil?
+    where("title LIKE ?", "%#{search_word}%")
+  }
+
   scope :search_by_tag, -> (tag_id) {
     return if tag_id.nil?
     joins(:tags).where("tags.id = ?", tag_id)

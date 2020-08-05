@@ -4,6 +4,17 @@
     <title>クズ男データベース</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <% set_meta_tags og: {
+                       type: 'article',
+                       url: request.url
+                     },
+                     twitter: {
+                       card: "summary_large_image",
+                     },
+                     fb: {
+                       app_id: "621898788712649"
+                     }
+    %>
     <%= display_meta_tags site: 'クズ男データベース' %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
