@@ -16,8 +16,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     port: 587,
     address: 'smtp.gmail.com',
-    domain: 'trash-man-db.forest-services.net',
-    user_name: 'info.forest.services@gmail.com',
+    domain: 'gmail.com',
+    user_name: ENV["GMAIL_ADDRESS"],
     password: ENV["GMAIL_PASSWORD"],
     authentication: 'plain',
     enable_starttls_auto: true
