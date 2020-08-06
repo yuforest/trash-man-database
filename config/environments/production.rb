@@ -19,8 +19,7 @@ Rails.application.configure do
     domain: 'gmail.com',
     user_name: ENV["GMAIL_ADDRESS"],
     password: ENV["GMAIL_PASSWORD"],
-    authentication: :login,
-    enable_starttls_auto: true
+    authentication: :login
   }
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
