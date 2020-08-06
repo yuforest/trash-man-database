@@ -21,7 +21,7 @@ Rails.application.configure do
     domain: 'smtp.gmail.com',
     user_name: mail,
     password: pass,
-    authentication: :login,
+    authentication: 'login',
     enable_starttls_auto: true
   }
   # Full error reports are disabled and caching is turned on.
