@@ -13,12 +13,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'trash-man-db.forest-services.net' }
+  mail = ENV["GMAIL_ADDRESS"]
+  pass = ENV["GMAIL_PASSWORD"]
   config.action_mailer.smtp_settings = {
     port: 587,
     address: 'smtp.gmail.com',
     domain: 'smtp.gmail.com',
-    user_name: ENV["GMAIL_ADDRESS"],
-    password: ENV["GMAIL_PASSWORD"],
+    user_name: mail,
+    password: pass,
     authentication: :login,
     enable_starttls_auto: true
   }
