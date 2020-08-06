@@ -17,9 +17,9 @@ Rails.application.configure do
     port:                 587,
     address:              'smtp.gmail.com',
     domain:               'gmail.com',
-    user_name:            'lostforest0@gmail.com',
+    user_name:            'info.forest.services@gmail.com',
     password:             ENV["GMAIL_PASSWORD"],
-    authentication:       'login',
+    authentication:       'plain',
     enable_starttls_auto: true
   }
   # Full error reports are disabled and caching is turned on.
