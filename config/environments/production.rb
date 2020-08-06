@@ -20,7 +20,7 @@ Rails.application.configure do
     domain:               'gmail.com',
     user_name:            'info.forest.services@gmail.com',
     password:             pass,
-    authentication:       'plain',
+    authentication:       :login,
     enable_starttls_auto: true
   }
   # Full error reports are disabled and caching is turned on.
