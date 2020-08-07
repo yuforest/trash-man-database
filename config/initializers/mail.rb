@@ -1,16 +1,16 @@
 if Rails.env.production?
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    address: 'smtp.gmail.com',
-    domain: 'gmail.com',
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
     port: 587,
-    user_name: 'Gmail のメールアドレス',
-    password: 'Gmail のパスワード',
+    address: 'smtp.gmail.com',
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"],
     authentication: 'plain',
     enable_starttls_auto: true
   }
 elsif Rails.env.development?
-  ActionMailer::Base.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :letter_opener
 else
-  ActionMailer::Base.delivery_method = :test
+  config.action_mailer.delivery_method = :test
 end
