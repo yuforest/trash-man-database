@@ -16,13 +16,13 @@ ja:
       unconfirmed: 'メールアドレスの本人確認が必要です。'
     mailer:
       confirmation_instructions:
-        subject: 'アカウントの有効化について'
+        subject: '【クズ男データベース】アカウントの有効化について'
       reset_password_instructions:
-        subject: 'パスワードの再設定について'
+        subject: '【クズ男データベース】パスワードの再設定について'
       unlock_instructions:
-        subject: 'アカウントの凍結解除について'
+        subject: '【クズ男データベース】アカウントの凍結解除について'
       password_change:
-        subject: 'パスワードの変更について'
+        subject: '【クズ男データベース】パスワードの変更について'
     omniauth_callbacks:
       failure: "%{kind} アカウントによる認証に失敗しました。理由：（%{reason}）"
       success: "%{kind} アカウントによる認証に成功しました。"
